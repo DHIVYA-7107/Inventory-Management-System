@@ -1,3 +1,19 @@
+// ---------- Thread Class Implementation ----------
+class StockChecker extends Thread {
+    private List<Product> products;
+    public StockChecker(List<Product> products) {
+        this.products = products;
+    }
+    public void run() {
+        for (Product p : products) {
+            if (p.getQuantity() < 5) {
+                System.out.println("⚠ Reminder: Product '" + p.getName() +
+                        "' is running low (Qty: " + p.getQuantity() + ")");
+            }
+        }
+    }
+}
+
 // ---------- Inventory Manager Class ----------
 class InventoryManager extends InventoryBase {
     private ArrayList<Product> products = new ArrayList<>()
