@@ -1,3 +1,33 @@
+    // Update Product
+    public void updateProduct(Scanner sc) {
+        System.out.print("Enter Product ID to update: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+        boolean found = false;
+        for (Product p : products) {
+            if (p.getId() == id) {
+                found = true;
+                System.out.println("Existing Details:");
+                p.display();
+                System.out.print("Enter new name: ");
+                String name = sc.nextLine();
+                System.out.print("Enter new category: ");
+                String category = sc.nextLine();
+                System.out.print("Enter new quantity: ");
+                int qty = sc.nextInt();
+                System.out.print("Enter new price: ");
+                double price = sc.nextDouble();
+                p.setName(name);
+                p.setCategory(category);
+                p.setQuantity(qty);
+                p.setPrice(price);
+                System.out.println("Product updated successfully!");
+                break;
+            }
+        }
+        if (!found) System.out.println("Product ID not found.");
+    }
+
 // Delete Product
     public void deleteProduct(Scanner sc) {
         System.out.print("Enter Product ID to delete: ");
