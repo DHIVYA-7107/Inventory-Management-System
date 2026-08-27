@@ -1,3 +1,9 @@
+// ---------- Inheritance + Polymorphism (Method Overriding) ----------
+class DiscountedProduct extends Product {
+    public DiscountedProduct(int id, String name, String category, int quantity, double price) {
+        super(id, name, category, quantity, price);
+    }
+
 // Overridden method (Runtime Polymorphism)
     public double calculateBill(int qty, boolean premium) {
         double amount = getPrice() * qty;
