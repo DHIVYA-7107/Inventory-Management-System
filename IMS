@@ -1,4 +1,10 @@
-    // File Save / Load
+ // Run Stock Check Thread
+    public void runStockCheck() {
+        StockChecker checker = new StockChecker(products);
+        checker.start();
+    }
+
+// File Save / Load
     public void saveLoadFile(Scanner sc) {
         try {
             System.out.print("Do you want to save data? (y/n): ");
