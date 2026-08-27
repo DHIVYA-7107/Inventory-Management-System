@@ -1,3 +1,10 @@
+// Display method
+    public void display() {
+        System.out.printf("ID: %d | Name: %s | Category: %s | Quantity: %d | Price: ₹%.2f%n",
+                id, name, category, quantity, price);
+    }
+}
+
 // ---------- Inheritance + Polymorphism (Method Overriding) ----------
 class DiscountedProduct extends Product {
     public DiscountedProduct(int id, String name, String category, int quantity, double price) {
