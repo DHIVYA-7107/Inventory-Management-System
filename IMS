@@ -1,4 +1,29 @@
-// View Products
+// ---------- Inventory Manager Class ----------
+class InventoryManager extends InventoryBase {
+    private ArrayList<Product> products = new ArrayList<>()
+    // Add Product
+    public void addProduct(Scanner sc) {
+        try {
+            System.out.print("Enter Product ID: ");
+            int id = sc.nextInt();
+            sc.nextLine();
+            System.out.print("Enter Product Name: ");
+            String name = sc.nextLine();
+            System.out.print("Enter Category: ");
+            String category = sc.nextLine();
+            System.out.print("Enter Quantity: ");
+            int quantity = sc.nextInt();
+            System.out.print("Enter Price: ");
+            double price = sc.nextDouble();
+            products.add(new Product(id, name, category, quantity, price));
+            System.out.println("Product Added Successfully!");
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input! Please enter correct data types.");
+            sc.nextLine();
+        }
+    }
+
+//View Products
     public void viewProducts() {
         if (products.isEmpty()) {
             System.out.println("No products available.");
