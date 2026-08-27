@@ -1,3 +1,10 @@
+// ---------- Final Class ----------
+final class FinalMessage {
+    public void show() {
+        System.out.println("Final class: Thank you for using Inventory System!");
+    }
+}
+
 // ---------- Main Class ----------
 public class Main {
     public static void main(String[] args) {
