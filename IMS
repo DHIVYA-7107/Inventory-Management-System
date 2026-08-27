@@ -1,4 +1,29 @@
- // Run Stock Check Thread
+    // Sell Product (Polymorphism)
+    public void sellProduct(Scanner sc) {
+        System.out.print("Enter Product ID to sell: ");
+        int id = sc.nextInt();
+        System.out.print("Enter Quantity to sell: ");
+        int qty = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter Customer Type (regular/premium): ");
+        String type = sc.nextLine();
+        for (Product p : products) {
+            if (p.getId() == id) {
+                if (qty > p.getQuantity()) {
+                    System.out.println("Insufficient stock!");
+                    return;
+                }
+                DiscountedProduct dp = new DiscountedProduct(p.getId(), p.getName(), p.getCategory(), p.getQuantity(), p.getPrice());
+                double bill = dp.calculateBill(qty, type.equalsIgnoreCase("premium"));
+                p.setQuantity(p.getQuantity() - qty);
+                System.out.println("Final Bill: ₹" + bill);
+                return;
+            }
+        }
+        System.out.println("Product not found.");
+    }
+
+// Run Stock Check Thread
     public void runStockCheck() {
         StockChecker checker = new StockChecker(products);
         checker.start();
