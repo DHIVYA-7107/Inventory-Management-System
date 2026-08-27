@@ -1,3 +1,10 @@
+// ---------- Custom Exception ----------
+class LowStockException extends Exception {
+    public LowStockException(String message) {
+        super(message);
+    }
+}
+
 // ---------- Thread Class Implementation ----------
 class StockChecker extends Thread {
     private List<Product> products;
