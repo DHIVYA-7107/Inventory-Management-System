@@ -1,3 +1,11 @@
+// Overridden method (Runtime Polymorphism)
+    public double calculateBill(int qty, boolean premium) {
+        double amount = getPrice() * qty;
+        if (premium) amount -= amount * 0.10; // 10% discount for premium customers
+        return amount;
+    }
+}
+
 // ---------- Custom Exception ----------
 class LowStockException extends Exception {
     public LowStockException(String message) {
