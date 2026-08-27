@@ -1,4 +1,15 @@
-    // Sell Product (Polymorphism)
+// Delete Product
+    public void deleteProduct(Scanner sc) {
+        System.out.print("Enter Product ID to delete: ");
+        int id = sc.nextInt();
+        boolean removed = products.removeIf(p -> p.getId() == id);
+        if (removed)
+            System.out.println("Product deleted successfully!");
+        else
+            System.out.println("Product not found.");
+    }
+
+// Sell Product (Polymorphism)
     public void sellProduct(Scanner sc) {
         System.out.print("Enter Product ID to sell: ");
         int id = sc.nextInt();
