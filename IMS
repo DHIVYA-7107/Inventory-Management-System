@@ -1,4 +1,10 @@
-    // Update Product
+    // Abstract method implementation
+    @Override
+    void displayProducts() {
+        viewProducts();
+    }
+
+// Update Product
     public void updateProduct(Scanner sc) {
         System.out.print("Enter Product ID to update: ");
         int id = sc.nextInt();
