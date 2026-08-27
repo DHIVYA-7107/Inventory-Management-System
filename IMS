@@ -1,4 +1,16 @@
-    // Abstract method implementation
+// View Products
+    public void viewProducts() {
+        if (products.isEmpty()) {
+            System.out.println("No products available.");
+            return;
+        }
+        System.out.println("\n--- Product List ---");
+        for (Product p : products) {
+            p.display();
+        }
+    }
+
+// Abstract method implementation
     @Override
     void displayProducts() {
         viewProducts();
