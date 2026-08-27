@@ -1,3 +1,9 @@
+
+// ---------- Abstract Base Class ----------
+abstract class InventoryBase {
+    abstract void displayProducts();
+}
+
 // ---------- Product Class (Encapsulation + Constructor Overloading + this keyword) ----------
 class Product {
     private int id;
